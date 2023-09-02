@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Google Sheets API setup
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name('google_sheets_credentials.json', scope)
+
 client = gspread.authorize(creds)
 spreadsheet = client.open('ecart')
 worksheet = spreadsheet.get_worksheet(0)  # Assuming the data is in the first worksheet
